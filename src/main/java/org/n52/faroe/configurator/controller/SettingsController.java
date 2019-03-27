@@ -15,15 +15,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This controller is responsible for creation of endpoints to modify settings more easily.
+ */
 @RestController
 @RequestMapping({"/settings"})
 public class SettingsController {
 
   private static final Logger LOG = LoggerFactory.getLogger(SettingsController.class);
 
-  @Inject private SettingsUtilities settingsUtilities;
-
-  @Inject private ConfigLocationProvider configLocationProvider;
+  @Inject
+  private SettingsUtilities settingsUtilities;
 
   @PostMapping
   public ResponseEntity<Object> updateSettings(@RequestBody String newSettings) {

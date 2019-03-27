@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
+/**
+ * Starting point for the configurator API.
+ */
 @SpringBootApplication
 @ImportResource("classpath:applicationContext.xml")
 public class ConfiguratorApplication {

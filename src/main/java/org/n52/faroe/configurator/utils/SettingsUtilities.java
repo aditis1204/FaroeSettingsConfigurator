@@ -13,13 +13,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+/**
+ * This class abstracts the logic of interacting with Faroe API.
+ */
 @Component
 public class SettingsUtilities {
 
   private static final Logger LOG = LoggerFactory.getLogger(SettingsUtilities.class);
 
-  @Inject private SettingsService settingsService;
+  @Inject
+  private SettingsService settingsService;
 
+  /**
+   * This method updates the settings in configuration
+   * @param incomingSettings
+   */
   public void updateSettings(String incomingSettings) {
     Map<SettingDefinition<?>, SettingValue<?>> newSettings = new HashMap<>();
     try {
@@ -41,6 +49,10 @@ public class SettingsUtilities {
     }
   }
 
+  /**
+   * This method fetches the settings from configuration
+   * @return
+   */
   public String getSettings() {
     try {
       Map<SettingDefinition<?>, SettingValue<?>> settings = settingsService.getSettings();
@@ -52,6 +64,9 @@ public class SettingsUtilities {
     }
   }
 
+  /**
+   * This method deletes all settings from configuration
+   */
   public void deleteSettings() {
     try {
       this.settingsService.deleteAll();
