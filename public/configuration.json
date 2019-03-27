@@ -1,0 +1,8 @@
+{
+  "settings": {
+    "service.strictSpatialFilteringProfile": {
+      "type": "boolean",
+      "value": false
+    }
+  }
+}
